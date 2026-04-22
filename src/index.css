@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ✅ Correct font import moved to index.html for performance */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* =========================
+   🎨 Design Tokens
+========================= */
+@theme {
+  --color-blue-900: hsl(209, 23%, 22%);
+  --color-blue-950: hsl(207, 26%, 17%);
+  --color-grey-950: hsl(200, 15%, 8%);
+  --color-grey-400: hsl(0, 0%, 50%);
+  --color-grey-50: hsl(0, 0%, 99%);
+  --color-white: hsl(0, 100%, 100%);
+
+  --color-bg: var(--color-grey-50);
+
+  --color-text: var(--color-grey-950);
+  --color-input: var(--color-grey-400);
+  --color-element: var(--color-white);
+
+  --font-sans: "Nunito Sans", sans-serif;
+
+  --text-home: 14px;
+  --text-detail: 16px;
+  --width-cardwidth: 100%;
+  --height-cardheight: 150px;
+  --breakpoint-mmd: 460px;
+  /* --breakpoint-md: 576px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px; */
+
+}
+
+/* 🌙 Dark mode overrides */
+.dark {
+  --color-bg: var(--color-blue-950);
+  --color-text: var(--color-white);
+  --color-element: var(--color-blue-900);
+}
+
+/* =========================
+   Base styles
+========================= */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--text-home);
+  }
+  img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+}
+
+
+
