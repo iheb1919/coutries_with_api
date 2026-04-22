@@ -1,5 +1,5 @@
 import './App.css'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router'
+import { createHashRouter, RouterProvider, Outlet } from 'react-router'
 import Home from './pages/Home'
 import CountryDetails from './pages/CountryDetails';
 import Navbar from './compoennets/Navbar';
@@ -15,7 +15,7 @@ function Layout() {
 }
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Layout />,
