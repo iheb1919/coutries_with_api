@@ -5,9 +5,23 @@ import { useState } from "react";
 const CountryFilters = ({ searchInput, setSearchInput, region, setRegion }: any) => {
     return (
         <div className=' flex justify-between flex-wrap gap-2 pb-10 items-center  container mx-auto'>
-            <label htmlFor="search" className='relative text-input bg-element shadow-md rounded-lg w-[300px] flex items-center '>
+            <label htmlFor="search" className='relative text-input bg-element shadow-md rounded-lg w-[300px] flex items-center focus-within:ring-0 focus-within:shadow-[0_0_8px_rgba(0,123,255,0.5)] transition-all duration-300'>
+
                 <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-1/2 -translate-y-1/2" />
-                <input id='search' className="p-4 pl-9 font-[600] h-full w-full border-none" type="text" placeholder="Search for a country..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
+                <input id='search' aria-label="Search for a country" className="peer p-4 pl-9 font-[600] h-full w-full border-0! shadow-none! bg-transparent focus:outline-none" type="text" placeholder="Search for a country..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
+                <span
+                    className="absolute left-3 top-1/2 -translate-y-1/2 px-1 pointer-events-none 
+                    transition-all duration-300 text-text/60 z-10
+                peer-focus:top-0  peer-focus:-translate-y-1/2 peer-focus:text-xs peer-focus:text-blue-500
+                peer-focus:bg-(--color-bg)
+                peer-placeholder-shown:opacity-0
+                peer-focus:opacity-100
+                peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:-translate-y-1/2 
+                peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-(--color-bg)
+                
+                
+                "
+                >Country name</span>
             </label>
 
             <CustomSelect region={region} setRegion={setRegion} />

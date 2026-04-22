@@ -7,10 +7,10 @@ import Navbar from './compoennets/Navbar';
 function Layout() {
   return <>
     <Navbar />
-    <div className='px-4 py-10 '>
+    <main className='px-4 py-10 '>
 
       <Outlet />
-    </div>
+    </main>
   </>
 }
 
