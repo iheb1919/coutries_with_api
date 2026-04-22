@@ -1,4 +1,4 @@
-import { faChevronDown, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
@@ -27,6 +27,7 @@ const CustomSelect = ({ region, setRegion }: any) => {
                 className="w-full p-3 bg-element rounded-lg shadow-md text-left"
             >
                 {region || "Filter by Region"}
+                {region && <span onClick={() => setRegion('')} className="absolute right-9 top-1/2 -translate-y-1/2 hover:cursor-pointer  hover:bg-red-200 transition-all duration-300 hover:text-red-500"><FontAwesomeIcon icon={faXmark} /></span>}
                 <FontAwesomeIcon icon={faChevronDown} className="absolute right-3 top-1/2 -translate-y-1/2" />
             </button>
             {open && (
@@ -41,7 +42,7 @@ const CustomSelect = ({ region, setRegion }: any) => {
                                 setRegion(r);
                                 setOpen(false);
                             }}
-                            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                            className={`px-4 py-2 hover:bg-gray-200 cursor-pointer ${region === r ? 'bg-gray-200' : ''} `}
                         >
                             {r}
                         </li>

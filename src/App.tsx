@@ -1,7 +1,7 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router'
-import Home from './compoennets/Home'
-import CountryDetails from './compoennets/CountryDetails';
+import Home from './pages/Home'
+import CountryDetails from './pages/CountryDetails';
 import Navbar from './compoennets/Navbar';
 
 function Layout() {

@@ -1,13 +1,12 @@
-import CountryCard from './countryCard'
-import CountryFilters from './CountryFilters'
-import CountryLoading from './CountryLoading'
+import CountryCard from '../compoennets/countryCard'
+import CountryFilters from '../compoennets/CountryFilters'
+import CountryLoading from '../compoennets/CountryLoading'
 import { useGetCoutries } from '../contexts/useGetCoutries'
 import type { CountrySummary } from '../types/types';
 
 function Home() {
 
     const { countriesData, isLoading, isError, searchInput, setSearchInput, region, setRegion, visibleCount } = useGetCoutries();
-    console.log(isError)
     return (
         <>
             <CountryFilters searchInput={searchInput} setSearchInput={setSearchInput} region={region} setRegion={setRegion} />

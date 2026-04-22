@@ -2,10 +2,10 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useGetSingleCountry from "../contexts/useGetSinglecountry";
 import { Link } from "react-router";
-import OptimizedImage from "./OptimizedImage";
-import { ContryCardText } from "./ContryCardText";
+import OptimizedImage from "../compoennets/OptimizedImage";
+import { ContryCardText } from "../compoennets/ContryCardText";
 import type { CountryDetail, CountrySummary } from "../types/types";
-import CountryDetailsLoading from "./CountryDetailsLoading";
+import CountryDetailsLoading from "../compoennets/CountryDetailsLoading";
 const BackButton = () => {
     return (
         <Link to="/" className="flex items-center justify-center gap-2 bg-element shadow-lg mb-10 w-[140px] py-3 px-2 rounded-md cursor-pointer">
@@ -52,10 +52,10 @@ const CountryDetails = () => {
 
                             <div className="flex flex-col gap-1.5">
                                 {country.name.nativeName && (
-                                    <ContryCardText 
-                                        text={country.name.nativeName[Object.keys(country.name.nativeName)[0]].common} 
-                                        label={'Native Name'} 
-                                        classN="text-[14px]!" 
+                                    <ContryCardText
+                                        text={country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}
+                                        label={'Native Name'}
+                                        classN="text-[14px]!"
                                     />
                                 )}
                                 <ContryCardText text={country.population} label={'Population'} classN="text-[14px]!" />
@@ -67,17 +67,17 @@ const CountryDetails = () => {
                             <div className="flex flex-col gap-1.5">
                                 <ContryCardText text={country.tld || []} label={'Top Level Domain'} classN="text-[14px]!" />
                                 {country.currencies && (
-                                    <ContryCardText 
-                                        text={Object.values(country.currencies).map((currency) => currency.name)} 
-                                        label={'Currencies'} 
-                                        classN="text-[14px]!" 
+                                    <ContryCardText
+                                        text={Object.values(country.currencies).map((currency) => currency.name)}
+                                        label={'Currencies'}
+                                        classN="text-[14px]!"
                                     />
                                 )}
                                 {country.languages && (
-                                    <ContryCardText 
-                                        text={Object.values(country.languages)} 
-                                        label={'Languages'} 
-                                        classN="text-[14px]!" 
+                                    <ContryCardText
+                                        text={Object.values(country.languages)}
+                                        label={'Languages'}
+                                        classN="text-[14px]!"
                                     />
                                 )}
                             </div>

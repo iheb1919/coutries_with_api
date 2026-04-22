@@ -6,7 +6,7 @@ const CountryCard = ({ country, priority }: { country: CountrySummary; priority?
     return (
 
         <Link to={`/country/${country.name.common}`} className='bg-element hover:cursor-pointer 
-        group-hover/item:not-[&:hover]:grayscale-60  
+        group-has-[:hover]/item:not-[&:hover]:grayscale-60  
         
         shadow-md rounded-lg overflow-hidden w-full max-w-[400px] md:max-w-[290px] 
         mx-auto pb-10 transition-all hover:scale-[1.02] duration-300'>
